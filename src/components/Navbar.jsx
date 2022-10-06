@@ -9,32 +9,35 @@ const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(true);
   const [screenSize, setScreenSize] = useState(undefined);
 
-
   const [data, setdata] = useState({
-    address: "",
+    address: '',
     Balance: null,
   });
-  
   // Button handler button for handling a
   // request event for metamask
+    // Function for getting handling all events
+    const accountChangeHandler = (account) => {
+      // Setting an address data
+      setdata({
+        address: account,
+      });
+      // Setting a balance
+      getbalance(account);
+    };
   const btnhandler = () => {
-  
     // Asking if metamask is already present or not
     if (window.ethereum) {
-  
       // res[0] for fetching a first wallet
       window.ethereum
         .request({ method: "eth_requestAccounts" })
         .then((res) => accountChangeHandler(res[0]));
     } else {
-      alert("install metamask extension!!");
+      alert('install metamask extension!!');
     }
   };
-  
   // getbalance function for getting a balance in
   // a right format with help of ethers
   const getbalance = (address) => {
-  
     // Requesting balance method
     window.ethereum
       .request({ 
@@ -48,30 +51,12 @@ const Navbar = () => {
         });
       });
   };
-  
-  // Function for getting handling all events
-  const accountChangeHandler = (account) => {
-    // Setting an address data
-    setdata({
-      address: account,
-    });
-  
-    // Setting a balance
-    getbalance(account);
-  };
-  
-
-
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth);
-
     window.addEventListener('resize', handleResize);
-
     handleResize();
-
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   useEffect(() => {
     if (screenSize <= 800) {
       setActiveMenu(false);
@@ -79,7 +64,6 @@ const Navbar = () => {
       setActiveMenu(true);
     }
   }, [screenSize]);
-
   return (
     <div className="nav-container">
       <div className="logo-container">
@@ -102,9 +86,7 @@ const Navbar = () => {
           <Link to="/news">News</Link>
         </Menu.Item>
         <Menu.Item icon={<BulbOutlined />}>
-        <span onClick={btnhandler}>
-      Connect to MetaMask
-    </span>
+        <span onClick={btnhandler}>Connect to MetaMask</span>
         </Menu.Item>
       </Menu>
       )}
