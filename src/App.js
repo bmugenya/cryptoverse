@@ -3,8 +3,7 @@ import { Switch, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
 import { Exchanges, Homepage, News, Cryptocurrencies, CryptoDetails, Navbar } from './components';
-// import ProtectedRoute from "./components/ProtectedRoute"
-import MetaMaskAuth from "./components/auth"
+
 import './App.css';
 
 const App = () => (
@@ -16,14 +15,8 @@ const App = () => (
       <Layout>
         <div className="routes">
           <Switch>
-          {/* <Route component={<ProtectedRoute />}> */}
-
-
             <Route exact path="/">
               <Homepage />
-            </Route>
-            <Route exact path="/auth">
-              <MetaMaskAuth />
             </Route>
             <Route exact path="/exchanges">
               <Exchanges />
@@ -37,7 +30,6 @@ const App = () => (
             <Route exact path="/news">
               <News />
             </Route>
-            {/* </Route> */}
           </Switch>
         </div>
       </Layout>
@@ -53,7 +45,6 @@ const App = () => (
           <Link to="/exchanges">Exchanges</Link>
           <Link to="/news">News</Link>
           <a target="_blank" href="https://metamask.io/download/">install Metamask</a>
-        
         </Space>
       </div>
     </div>

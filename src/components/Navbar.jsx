@@ -105,10 +105,7 @@ const Navbar = () => {
         <span onClick={btnhandler}>
       Connect to MetaMask
     </span>
-
         </Menu.Item>
-
-      
       </Menu>
       )}
     </div>
