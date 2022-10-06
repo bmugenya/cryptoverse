@@ -15,10 +15,16 @@ const Homepage = () => {
   const globalStats = data?.data?.stats;
 
   if (isFetching) return <Loader />;
+  console.log(data)
 
   return (
     <>
       <Title level={2} className="heading">Global Crypto Stats</Title>
+      <Title level={5} className="heading">  {data.address}{data.Balance} </Title>
+   
+    
+    
+            
       <Row gutter={[32, 32]}>
         <Col span={12}><Statistic title="Total Cryptocurrencies" value={globalStats.total} /></Col>
         <Col span={12}><Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges)} /></Col>
