@@ -13,6 +13,7 @@
     "@uniswap/widgets": "^2.14.1",
     "antd": "^4.16.13",
     "axios": "^0.21.1",
+    "binance-fiat-widget": "^1.1.16",
     "chart.js": "^3.5.1",
     "dotenv": "^16.0.0",
     "ethers": "^5.5.4",
@@ -25,6 +26,7 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.1",
     "react-scripts": "4.0.3",
+    "request": "^2.88.2",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },

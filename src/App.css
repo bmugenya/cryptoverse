@@ -377,3 +377,16 @@ width: 70%;
     padding: 20px;
     align-items: center;
 }
+
+.car{
+margin-left:19em;
+}
+
+.round img {
+    border-radius: 50% !important;
+}
+
+.text{
+    font-size: 1rem;
+    opacity: 0.9; 
+}
