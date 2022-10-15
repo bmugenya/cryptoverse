@@ -7,13 +7,16 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 
 import Loader from './Loader';
 
-const { Title } = Typography;
-const { Panel } = Collapse;
+
 import invest from '../images/invest.jpg';
 import learn from '../images/learn.jpg';
 import profit from '../images/profit.jpg';
 import banner from '../images/banner.jpg';
 import tim from '../images/tim.png';
+
+const { Title } = Typography;
+const { Panel } = Collapse;
+
 const text = `
   A dog is a type of domesticated animal.
   Known for its loyalty and faithfulness,
