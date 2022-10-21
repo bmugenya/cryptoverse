@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Menu, Typography, Avatar } from 'antd';
+import React, { useState, useEffect,useRef } from 'react';
+import {Button, Form, Menu, Typography, Avatar, Select } from 'antd';
 import { Link } from 'react-router-dom';
-import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined,AreaChartOutlined } from '@ant-design/icons';
+import { HomeOutlined, MoneyCollectOutlined, BulbOutlined, FundOutlined, MenuOutlined,AreaChartOutlined  } from '@ant-design/icons';
 
+import emailjs from '@emailjs/browser'
 
 import { providers, ethers } from 'ethers';
 import detectEthereumProvider from '@metamask/detect-provider';
 import {SwapWidget } from '@uniswap/widgets'
-import BinanceWidget from './BinanceWidget'
+
 
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-
+import TextField from '@mui/material/TextField';
 import icon from '../images/cryptocurrency.png';
+import MenuItem from '@mui/material/MenuItem';
 
 var request = require('request');
 
@@ -30,6 +32,42 @@ const style = {
 };
 
 
+const currencies = [
+  {
+    value: 'USD',
+    label: 'USD',
+  },
+
+  {
+    value: 'BTC',
+    label: 'BTC',
+  },
+  {
+    value: 'ETH',
+    label: 'ETH',
+  },
+];
+
+const stylee = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+const inputGroup = {
+  position: 'relative',
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignItems: 'stretch',
+  width: '100%',
+}
+
+
 var dataString = '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["latest",true], "id":1}';
 
 var options = {
@@ -39,6 +77,11 @@ var options = {
 	body: dataString,
 };
 
+
+const { Option } = Select;
+const handleChange = (value) => {
+  console.log(`selected ${value}`);
+};
 
 function callback(error, response, body) {
   var obj;
@@ -70,8 +113,37 @@ const jsonRpcUrlMap = {
 
 
 const Navbar = () => {
+
   const [activeMenu, setActiveMenu] = useState(true);
   const [screenSize, setScreenSize] = useState(undefined);
+  const form = useRef();
+
+
+
+  const [toSend, setToSend] = useState({
+    name: '',
+    address: '',
+    amount:'',
+    email:'',
+    currency:'',
+  });
+
+
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    emailjs.sendForm('service_o16tfo5','template_vx2alle',form.current, 'LlZmYphzpXdqBUncr' )
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+      });
+  };
+
+
+
+  const [, forceUpdate] = useState({});
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -129,6 +201,15 @@ const Navbar = () => {
     }
   }, [screenSize]);
 
+
+  useEffect(() => {
+    forceUpdate({});
+  }, []);
+  const onFinish = (values) => {
+    console.log('Finish:', values);
+  };
+
+
   return (
     <div className="nav-container">
       <Modal
@@ -152,8 +233,98 @@ const Navbar = () => {
   aria-labelledby="modal-modal-title"
   aria-describedby="modal-modal-description"
 >
-  <Box sx={style}>  
-    <BinanceWidget />
+  <Box sx={stylee}>  
+
+  <form ref={form} onSubmit={onSubmit}>
+
+
+
+
+    <div style={inputGroup}>
+    <TextField
+        margin="normal"
+        type="text"
+        required
+        fullWidth
+        id="name"
+        label="FUll Name"
+        autoComplete="name"
+        autoFocus
+        value={toSend.name}
+        name='name'
+        onChange={(event) => setToSend({name :event.target.value})}
+      />     
+    </div>
+
+    <div style={inputGroup}>
+    <TextField
+        margin="normal"
+        type="text"
+        required
+        fullWidth
+        id="email"
+        label="Email"
+        autoComplete="email"
+        autoFocus
+        value={toSend.email}
+        name='email'
+        onChange={(event) =>setToSend({email :event.target.value})}
+
+      />     
+    </div>
+
+    <div style={inputGroup}>
+    <TextField
+        margin="normal"
+        type="text"
+        required
+        fullWidth
+        id="amount"
+        label="Enter Amount"
+        autoComplete="amount"
+        autoFocus
+        value={toSend.amount}
+        name='amount'
+        onChange={(event) => setToSend({amount :event.target.value})}
+      />     
+    </div>
+
+    <div style={inputGroup}>
+    <TextField
+        margin="normal"
+        type="text"
+        required
+        fullWidth
+        id="address"
+        label="Address"
+        autoComplete="address"
+        autoFocus
+        value={toSend.address}
+        name='address'
+        onChange={(event) => setToSend({address :event.target.value})}
+      />     
+    </div>
+    <div style={inputGroup}>
+    <TextField
+          id="outlined-select-currency"
+          select
+          label="Select Currency"
+          value={toSend.currency}
+          name='currency'
+          onChange={(event) =>setToSend({currency :event.target.value})}
+        >
+          {currencies.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))}
+        </TextField>
+        </div>
+
+
+        <button type='submit'>Submit</button>
+
+</form> 
   </Box>
 </Modal>
 

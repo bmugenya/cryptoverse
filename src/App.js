@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 
-import { Homepage, News, Cryptocurrencies, CryptoDetails, Navbar,About } from './components';
+import { Homepage, News, Cryptocurrencies, CryptoDetails, Navbar,About,Footer } from './components';
 
 import './App.css';
 
@@ -34,20 +34,7 @@ const App = () => (
           </Switch>
         </div>
       </Layout>
-      <div className="footer">
-        <Typography.Title level={5} style={{ color: 'white', textAlign: 'center' }}>Copyright © 2021
-          <Link to="/">
-            Cryptoverse Inc.
-          </Link> <br />
-          All Rights Reserved.
-        </Typography.Title>
-        <Space>
-          <Link to="/">Home</Link>
-          <Link to="/exchanges">Exchanges</Link>
-          <Link to="/news">News</Link>
-          <a target="_blank"  rel="noreferrer" href="https://metamask.io/download/">install Metamask</a>
-        </Space>
-      </div>
+<Footer/>
     </div>
   </div>
 );

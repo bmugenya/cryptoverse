@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.6.4",
+    "@emailjs/browser": "^3.7.0",
     "@metamask/detect-provider": "^1.2.0",
     "@mui/material": "^5.10.9",
     "@reduxjs/toolkit": "^1.6.1",

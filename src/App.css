@@ -378,9 +378,14 @@ width: 70%;
     align-items: center;
 }
 
-.car{
-margin-left:19em;
+@media only screen and (min-width: 992px){
+    .car{
+        margin-left:19em;
+        } 
 }
+
+
+
 
 .round img {
     border-radius: 50% !important;

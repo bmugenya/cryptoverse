@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography, Collapse,Carousel,Image,Row, Col } from 'antd';
+import { Typography, Collapse, Carousel, Image, Row, Col, Card } from 'antd';
 import { Link } from 'react-router-dom';
 
 import { useGetCryptosQuery } from '../services/cryptoApi';
@@ -44,185 +44,191 @@ const About = () => {
 
   return (
     <div className="car">
-    
+
 
       <Carousel autoplay>
-    
-    <div style={inves}>
-    <Image
-    width='100%'
-  
-    src={invest}
-  />
-    
-    </div>
-    
-    <div style={contentStyle}>
-    <Image
-   width='100%'
-    src={learn}
-  />
-    
-    </div>
 
-    <div style={contentStyle}>
-    <Image
-     width='100%'
-   
-    src={profit}
-  />
-    
-    </div>
-    
-   
-    </Carousel>
+        <div style={inves}>
+          <Image
+            width='100%'
 
-    <Title level={2} className="heading">ROYALCOIN SYNDICATE</Title> 
+            src={invest}
+          />
 
-    <div>
-     <p className="text">Royalcoin Syndicate Escrow System  is a private Crypto Trading System setup by a group of people from Canada, United States, Australia, India, Egypt, Mexico, Denmark, Germany, working under the United Nations developmental programme (UNDP) to help them potentially benefit from the Crypto Space  and it's been managed by crypto experts.  it's also a way for  them making investments privately in the crypto space.
-Royalcoin Syndicate Escrow system is a system with a total number of 50 people across 8 countries and they have agreed to make it up to 150 maximum due to the up coming projects plan. And we will be 100 people at the end of this year. 
-</p>
+        </div>
+
+        <div style={contentStyle}>
+          <Image
+            width='100%'
+            src={learn}
+          />
+
+        </div>
+
+        <div style={contentStyle}>
+          <Image
+            width='100%'
+
+            src={profit}
+          />
+
+        </div>
 
 
-<p className="text">
-Royalcoin Syndicate has been operating privately for 5 years and now with his early stage  of coming to public with some interesting, trust and reliable features to help people benefit from Mataverse, Blockchain Technology / Crypto space and how they can change they financial status positively by partnering with Royalcoin Syndicate Escrow ystem 
+      </Carousel>
 
-Our unique selection of investment products, award-winning customer support team and behaviourally-driven rewards program creates an investment experience unlike any other.
-</p>
+      <Title level={2} className="heading">ROYALCOIN SYNDICATE</Title>
 
-<Title level={5}>
-Meet the team
-</Title>
+      <div>
+        <p className="text">Royalcoin Syndicate Escrow System  is a private Crypto Trading System setup by a group of people from Canada, United States, Australia, India, Egypt, Mexico, Denmark, Germany, working under the United Nations developmental programme (UNDP) to help them potentially benefit from the Crypto Space  and it's been managed by crypto experts.  it's also a way for  them making investments privately in the crypto space.
+          Royalcoin Syndicate Escrow system is a system with a total number of 50 people across 8 countries and they have agreed to make it up to 150 maximum due to the up coming projects plan. And we will be 100 people at the end of this year.
+        </p>
 
-<Row gutter={[32, 32]}>
-        
-        <Col span={8}>
+
+        <p className="text">
+          Royalcoin Syndicate has been operating privately for 5 years and now with his early stage  of coming to public with some interesting, trust and reliable features to help people benefit from Mataverse, Blockchain Technology / Crypto space and how they can change they financial status positively by partnering with Royalcoin Syndicate Escrow ystem
+
+          Our unique selection of investment products, award-winning customer support team and behaviourally-driven rewards program creates an investment experience unlike any other.
+        </p>
+
+        <Title level={5}>
+          INVESTMENT PLANS
+        </Title>
+
+        <Title level={5}>
+          Amount invested is withdrawable with the profit within 6 working days
+        </Title>
+
+
+
+        <Row gutter={[32, 32]}>
+
+          <Col lg={{ span:6 }} >
+            <Card title="STARTER PLAN">
+              <Title level={5}>
+                2% Daily ROI For 1 Day
+              </Title>
+
+              <Title level={5}>
+                10% interest on crypto loans for 3 months
+              </Title>
+              <Title level={5}>
+                cryptocurrencies at 5% discount
+              </Title>
+              <Title level={5}>
+                loan limit  -   $50,000
+              </Title>
+              <Title level={5}>
+                minimum deposit $50
+              </Title>
+
+            </Card>
+
+          </Col>
+
+          <Col lg={{ span:6}}>
+            <Card title=" VIP 1 PLAN">
+
+              <Title level={5}>
+                5% Daily ROI For 1 Day
+              </Title>
+
+              <Title level={5}>
+                15% interest on crypto loans for 3 months
+              </Title>
+              <Title level={5}>
+                cryptocurrencies at 10% discount
+              </Title>
+              <Title level={5}>
+                loan limit  -   $80,00
+              </Title>
+              <Title level={5}>
+                RCS DECENTRALIZED FINANCE (Defi)
+              </Title>
+
+              <Title level={5}>
+                minimum deposit  $1500
+              </Title>
+
+            </Card>
+
+
+          </Col>
+
+
+
+          <Col lg={{ span: 6}}>
+            <Card title="VIP 2 PLAN">
+
+              <Title level={5}>
+                40% interest on crypto loans for 3 months
+              </Title>
+              <Title level={5}>
+                cryptocurrencies at 20% discount
+              </Title>
+              <Title level={5}>
+                loan limit -   $100,000
+              </Title>
+              <Title level={5}>
+                RCS DECENTRALIZED FINANCE (Defi)
+              </Title>
+
+              <Title level={5}>
+                minimum deposit $2500
+              </Title>
+            </Card>
+
+          </Col>
+
+
+          <Col lg={{span:6}}>
+
+            <Card title="VIP 3  PLAN">
+
+
+
+              <Title level={5}>
+                60% interest on crypto loans for 3 months
+              </Title>
+              <Title level={5}>
+                cryptocurrencies at 30% discount
+              </Title>
+              <Title level={5}>
+                loan limit  -   $200,000
+              </Title>
+              <Title level={5}>
+                RCS DECENTRALIZED FINANCE (Defi)
+              </Title>
+
+              <Title level={5}>
+                minimum deposit $3000
+              </Title>
+
+            </Card>
+          </Col>
+
+        </Row>
+
+        <Title level={5}>
+          We only trade on the most reputable Crypto Currencies. Reducing the risk of relying on any single point of failure.
+        </Title>
+
+
         <Image
-   width={200}
-   rootClassName='round'
-    src={tim}
-  />
-<Title level={5}>
-CEO: John Doe
-</Title>
-
-</Col>
-
-<Col span={8}>
-<Image
-   width={200}
-   rootClassName='round'
-    src={tim}
-  />
-<Title level={5}>
-Sales: John Doe
-</Title>
-</Col>
-
-<Col span={8}>
-<Image
-   width={200}
-   rootClassName='round'
-    src={tim}
-  />
-<Title level={5}>
-Developer: John Doe
-</Title>
-</Col>
-</Row>
-
-<Title level={5}>
-We only trade on the most reputable Crypto Currencies. Reducing the risk of relying on any single point of failure.
-</Title>
+          width='100%'
+          height="500px"
+          src={banner}
+        />
 
 
 
 
-<Image
-   width='100%'
-   height="500px"
-    src={banner}
-  />
-
-
-<Title level={5}>
-
-
-
-These are features you can work with and make money with a short period of 1-6 months time.
-</Title>
-<Title level={5}>
-1. NFT  Invest in our NFT project and get  50%  return after 6 months. $300 - %1000
-</Title>
-<Title level={5}>
-2. CRYPTO TRADING :  Sharing of daily returns, 2% -30% ROI
-</Title>
-<Title level={5}>
-We are a team of experts that do 2 crypto pumps weekly and we give free serious crypto recommendations
-</Title>
-<Title level={5}>
-Starter $50 2% Daily
-</Title> 
-<Title level={5}>
-VIP1 $1500 15% Daily
-</Title>
-<Title level={5}>
-VIP2 $2000 20% Daily
-</Title>
-<Title level={5}>
-VIP3 $2500 40% Daily 
-</Title>
-<Title level={5}>
-VIP4 $3000 60% Daily
-</Title>
-<Title level={5}>
-
-Amount invested is withdrawable with the profit within 6 working days 
-</Title>
-<Title level={5}>
-3. CRYPTO LOAN:  Take a soft loan and pay back within 3 months with 15% interest.
-</Title>
-<Title level={5}>
-Minimum loan amount is $15,000  -   $100,000
-</Title>
-<Title level={5}>
-4. BUY CRYPTO CURRENCY :  Royalcoin Syndicate Escrow system  is celebrating 5 years anniversary and selling Crypto Currency with 5% discount price and gives you 10%  if you bring buyers. 
-</Title>
-<Title level={5}>
-Get %5 to 10% discount on every of your purchase 
-</Title>
-<Title level={5}>
-$5000 = %5.     $50,000= %10
-</Title>
-<Title level={5}>
-5. RCS DECENTRALIZED FINANCE (Defi)
-</Title>
-<Title level={5}>
-TOKEN  STAKING: coming soon.
-</Title>
-<Title level={5}>
-Prepare for a  positive change
-</Title> 
-<Title level={5}>
-
-Total Supply: 250,000,000
-</Title>
-<Title level={5}>
-Circulating Supply: 50,000,000
-</Title>
-<Title level={5}>
-Token Value: 1= $2 
-</Title>
-<Title level={5}>
-RSC Token Pool.
-</Title>
-</div>
+      </div>
 
 
 
 
-   
+
     </div>
   );
 };
