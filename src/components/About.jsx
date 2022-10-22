@@ -51,7 +51,6 @@ const About = () => {
         <div style={inves}>
           <Image
             width='100%'
-
             src={invest}
           />
 
@@ -68,7 +67,6 @@ const About = () => {
         <div style={contentStyle}>
           <Image
             width='100%'
-
             src={profit}
           />
 
@@ -119,6 +117,10 @@ const About = () => {
                 loan limit  -   $50,000
               </Title>
               <Title level={5}>
+                RCS DECENTRALIZED FINANCE (Defi)
+              </Title>
+
+              <Title level={5}>
                 minimum deposit $50
               </Title>
 
@@ -160,6 +162,11 @@ const About = () => {
           <Col lg={{ span: 6}}>
             <Card title="VIP 2 PLAN">
 
+            <Title level={5}>
+                10% Daily ROI For 1 Day
+              </Title>
+
+
               <Title level={5}>
                 40% interest on crypto loans for 3 months
               </Title>
@@ -185,6 +192,9 @@ const About = () => {
 
             <Card title="VIP 3  PLAN">
 
+            <Title level={5}>
+                15% Daily ROI For 1 Day
+              </Title>
 
 
               <Title level={5}>

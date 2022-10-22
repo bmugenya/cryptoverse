@@ -63,7 +63,7 @@ const Footer = () => {
      
         <Space>
           <Link to="/">Home</Link>
-          <Link to="/exchanges">Exchanges</Link>
+          <Link>Exchanges</Link>
           <Link to="/news">News</Link>
           <a target="_blank"  rel="noreferrer" href="https://metamask.io/download/">install Metamask</a>
         </Space>

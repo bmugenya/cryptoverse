@@ -18,9 +18,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 var request = require('request');
 
-var headers = {
-	'Content-Type': 'application/json'
-};
+var headers = { 'Content-Type': 'application/json' };
 
 
 const style = {
@@ -132,7 +130,7 @@ const Navbar = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    emailjs.sendForm('service_o16tfo5','template_vx2alle',form.current, 'LlZmYphzpXdqBUncr' )
+    emailjs.sendForm('service_cx7e7w8','template_xjv74me',form.current, '0Na5wNBtzXa2_h3C1' )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
       })
@@ -181,7 +179,7 @@ const Navbar = () => {
         provider: ethereumProvider
       })
     }else{
-      alert("Install metamask extension!! check bootom of page for link")
+      alert("Install metamask extension!! check bottom of page for link")
     }
   }
 
@@ -236,9 +234,6 @@ const Navbar = () => {
   <Box sx={stylee}>  
 
   <form ref={form} onSubmit={onSubmit}>
-
-
-
 
     <div style={inputGroup}>
     <TextField
@@ -313,6 +308,7 @@ const Navbar = () => {
           name='currency'
           onChange={(event) =>setToSend({currency :event.target.value})}
         >
+  
           {currencies.map((option) => (
             <MenuItem key={option.value} value={option.value}>
               {option.label}
